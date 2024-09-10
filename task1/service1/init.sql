@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS Products (
+    id SERIAL PRIMARY KEY,
+    plu VARCHAR(50) UNIQUE NOT NULL,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Shops (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Stocks (
+    id SERIAL PRIMARY KEY,
+    product_id INTEGER NOT NULL REFERENCES Products(id),
+    shop_id INTEGER NOT NULL REFERENCES Shops(id),
+    stock_quantity INTEGER NOT NULL,
+    order_quantity INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS product_actions (
+    id SERIAL PRIMARY KEY,
+    shop_id INTEGER REFERENCES Shops(id),
+    plu VARCHAR(50) REFERENCES Products(plu),
+    action VARCHAR(255) NOT NULL,
+    action_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Shops) THEN
+        INSERT INTO Shops (name) VALUES ('Default Shop');
+    END IF;
+END $$;

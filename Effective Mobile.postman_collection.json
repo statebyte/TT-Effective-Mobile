@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "1c24852e-21c8-4262-951a-d3cb527d5332",
+		"name": "Effective Mobile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24067640",
+		"_collection_link": "https://lunar-comet-947268.postman.co/workspace/5PRODUCTION.NET~81d98c46-9f7a-4aa3-8759-41e0b153bead/collection/24067640-1c24852e-21c8-4262-951a-d3cb527d5332?action=share&source=collection_link&creator=24067640"
+	},
+	"item": [
+		{
+			"name": "Task2 - Endpoint Update Problems",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/update-problems-flag",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"update-problems-flag"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task1 - S1 - Create Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"plu\": \"1234567\",\r\n  \"name\": \"Sample Product 1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task1 - S1 - Create Stock",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"product_id\": 2,\r\n  \"shop_id\": 1,\r\n  \"stock_quantity\": 100,\r\n  \"order_quantity\": 50\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/stocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stocks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task1 - S1 - Stock Increase",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"stock_quantity\": 10,\r\n  \"order_quantity\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/stocks/increase/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stocks",
+						"increase",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task1 - S1 - Stock Decrease",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"stock_quantity\": 10,\r\n  \"order_quantity\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/stocks/decrease/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stocks",
+						"decrease",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task1 - S1 - Stock List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/stocks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stocks"
+					],
+					"query": [
+						{
+							"key": "plu",
+							"value": "123456",
+							"disabled": true
+						},
+						{
+							"key": "shop_id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "stock_min",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "stock_max",
+							"value": "150",
+							"disabled": true
+						},
+						{
+							"key": "order_min",
+							"value": "30",
+							"disabled": true
+						},
+						{
+							"key": "order_max",
+							"value": "60",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task1 - S1 - Products List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Sample",
+							"disabled": true
+						},
+						{
+							"key": "plu",
+							"value": "12345",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task1 - S2 - History Action List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3001/history?page=1&limit=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"history"
+					],
+					"query": [
+						{
+							"key": "plu",
+							"value": "12345",
+							"disabled": true
+						},
+						{
+							"key": "shop_id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "action",
+							"value": "update",
+							"disabled": true
+						},
+						{
+							"key": "startDate",
+							"value": "2024-01-01",
+							"disabled": true
+						},
+						{
+							"key": "endDate",
+							"value": "2024-09-10",
+							"disabled": true
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task1 - S2 - History Action Put",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"action\": \"test_action\",\r\n    \"shop_id\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"history"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
